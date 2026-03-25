@@ -4,46 +4,91 @@ Auto-generated Rust IL2CPP offsets, updated automatically when Rust updates.
 
 ## 📥 Download
 
-**Latest Offsets:**
-```
-https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/rust_offsets.hpp
-```
+**Two files available:**
 
-Or download directly: [rust_offsets.hpp](rust_offsets.hpp)
+### sdk.hpp - Full Offsets (All Classes)
+Complete list of all IL2CPP offsets for every class.
+```
+https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/sdk.hpp
+```
+[Download sdk.hpp](sdk.hpp)
+
+### offsets.hpp - Main Classes Only
+Curated list of the most commonly used classes:
+- BaseCombatEntity
+- BasePlayer
+- BaseProjectile
+- RecoilProperties
+- PlayerModel
+- PlayerInput
+- PlayerEyes
+- ItemDefinition
+- Item
+- And more...
+
+```
+https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/offsets.hpp
+```
+[Download offsets.hpp](offsets.hpp)
 
 ## 📊 Latest Update
 
 - **Build ID:** `22493936`
-- **Updated:** March 25, 2026 at 07:35 PM UTC
+- **Updated:** March 25, 2026 at 07:46 PM UTC
 - **Auto-generated:** Yes
 
 ## 🔧 Usage
 
-### C++
+### C++ - Main Classes
 ```cpp
-#include "rust_offsets.hpp"
+#include "offsets.hpp"
 
-// Access offsets
-auto health_offset = Offsets::PlayerModel::health;
-auto position_offset = Offsets::PlayerModel::position;
+// Access main class offsets
+auto health = offsets::BaseCombatEntity::health;
+auto position = offsets::BasePlayer::position;
+```
+
+### C++ - Full SDK
+```cpp
+#include "sdk.hpp"
+
+// Access any class offset
+auto offset = sdk::ClassName::fieldName;
+
+// Use helper functions
+auto value = read<float>(address + sdk::BasePlayer::health);
+
+// Follow offset chains
+auto result = follow_chain(base, {
+    sdk::BasePlayer::inventory,
+    sdk::Inventory::containerBelt
+});
 ```
 
 ### Direct Download (curl)
 ```bash
-curl -O https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/rust_offsets.hpp
+# Download main classes
+curl -O https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/offsets.hpp
+
+# Download full SDK
+curl -O https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/sdk.hpp
 ```
 
 ### Direct Download (PowerShell)
 ```powershell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/rust_offsets.hpp" -OutFile "rust_offsets.hpp"
+# Download main classes
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/offsets.hpp" -OutFile "offsets.hpp"
+
+# Download full SDK
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/sdk.hpp" -OutFile "sdk.hpp"
 ```
 
 ## 📝 Format
 
-The offsets are provided in C++ header format:
+Both files use C++ header format with constexpr offsets:
 
 ```cpp
-namespace Offsets
+namespace offsets // or sdk
 {
     namespace ClassName
     {
@@ -58,7 +103,7 @@ These offsets are automatically:
 1. Generated when Rust updates
 2. Uploaded to this repository
 3. Announced in Discord
-4. Available via raw GitHub URL
+4. Available via raw GitHub URLs
 
 ## 📜 Credits
 
@@ -68,7 +113,8 @@ These offsets are automatically:
 
 ## 🔗 Links
 
-- **Raw URL:** https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/rust_offsets.hpp
+- **SDK (Full):** https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/sdk.hpp
+- **Offsets (Main):** https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/offsets.hpp
 - **Dump.cs Source:** https://il2cpp.offsets.host/dumpcs
 - **Script.json Source:** https://il2cpp.offsets.host/scriptjson
 
@@ -78,7 +124,7 @@ These offsets are for educational purposes only. Use responsibly and in accordan
 
 ## 📅 Update History
 
-Last updated: 2026-03-25 19:35:51 UTC
+Last updated: 2026-03-25 19:46:19 UTC
 
 ---
 
