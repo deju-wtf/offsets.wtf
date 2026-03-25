@@ -14,7 +14,7 @@ Or download directly: [rust_offsets.hpp](rust_offsets.hpp)
 ## 📊 Latest Update
 
 - **Build ID:** `22493936`
-- **Updated:** March 25, 2026 at 04:56 PM UTC
+- **Updated:** March 25, 2026 at 07:35 PM UTC
 - **Auto-generated:** Yes
 
 ## 🔧 Usage
@@ -78,7 +78,7 @@ These offsets are for educational purposes only. Use responsibly and in accordan
 
 ## 📅 Update History
 
-Last updated: 2026-03-25 16:56:38 UTC
+Last updated: 2026-03-25 19:35:51 UTC
 
 ---
 
