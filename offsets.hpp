@@ -1,11 +1,11 @@
 #pragma once
 
-// Auto-generated Rust IL2CPP Offsets
-// Classes: 8087
+// Auto-generated Rust IL2CPP SDK
+// Complete offset list for all classes
 
 #include <cstdint>
 
-namespace offsets
+namespace sdk
 {
 	namespace ADP
 	{
@@ -82359,4 +82359,49 @@ namespace offsets
 		constexpr auto chainsawAnimator = 0x68; // Animator
 		constexpr auto chainRenderer = 0x70; // Renderer
 	}
-} // namespace offsets
+} // namespace sdk
+
+/* Helper templates for memory operations */
+template<typename T>
+inline T read(std::uintptr_t address) {
+	if (!address) return T{};
+	return *reinterpret_cast<T*>(address);
+}
+
+template<typename T>
+inline void write(std::uintptr_t address, T value) {
+	if (!address) return;
+	*reinterpret_cast<T*>(address) = value;
+}
+
+/* Offset chain helper */
+inline std::uintptr_t follow_chain(std::uintptr_t base, std::initializer_list<std::uintptr_t> offsets) {
+	std::uintptr_t address = base;
+	for (auto offset : offsets) {
+		if (!address) return 0;
+		address = read<std::uintptr_t>(address + offset);
+	}
+	return address;
+}
+
+/* Common offset chains for Rust game structures */
+namespace chains
+{
+} // namespace chains
+
+/* Usage Examples:
+ *
+ * // Access offsets directly
+ * auto health = read<float>(entity + sdk::BaseCombatEntity::health);
+ *
+ * // Use pre-built chains
+ * auto player_model = chains::get_player_model(player);
+ * auto player_eyes = chains::get_player_eyes(player);
+ * auto active_item = chains::get_active_item(player);
+ *
+ * // Follow custom chains
+ * auto result = follow_chain(base, {
+ *     sdk::BasePlayer::inventory,
+ *     sdk::Inventory::containerBelt
+ * });
+ */
