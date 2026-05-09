@@ -33,8 +33,8 @@ https://raw.githubusercontent.com/deju-wtf/offsets.wtf/main/offsets.hpp
 
 ## 📊 Latest Update
 
-- **Build ID:** `23145250`
-- **Updated:** May 08, 2026 at 11:50 AM UTC
+- **Build ID:** `23158857`
+- **Updated:** May 09, 2026 at 10:26 AM UTC
 - **Auto-generated:** Yes
 
 ## 🔧 Usage
@@ -124,7 +124,7 @@ These offsets are for educational purposes only. Use responsibly and in accordan
 
 ## 📅 Update History
 
-Last updated: 2026-05-08 11:50:34 UTC
+Last updated: 2026-05-09 10:26:45 UTC
 
 ---
 
